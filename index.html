@@ -14,84 +14,34 @@ ProfEmail: "Rbohn@ucsd.edu"
 TAEmail: "hyk149@eng.ucsd.edu"    
 ---
 
-
-<!-- See instructions in the comments below for how to edit specific sections of this workshop template. -->
-
-
-
-<!--
-  HEADER
-
-  Edit the values in the block above to be appropriate for your workshop.
-  If the value is not 'true', 'false', 'null', or a number, please use
-  double quotation marks around the value, unless specified otherwise.
-  And run 'tools/check' *before* committing to make sure that changes are good.
--->
-
-<!--
-  EVENTBRITE
-
-  This block includes the Eventbrite registration widget if
-  'eventbrite' has been set in the header.  You can delete it if you
-  are not using Eventbrite, or leave it in, since it will not be
-  displayed if the 'eventbrite' field in the header is not set.
--->
-{% if page.eventbrite %}
-<iframe
-  src="https://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt"
-  frameborder="0"
-  width="100%"
-  height="248px"
-  scrolling="auto">
-</iframe>
-{% endif %}
-
-
-
-<h2 id="general">General Information</h2>
-
-<!--
-  INTRODUCTION
-
-  Edit the general explanatory paragraph below if you want to change
-  the pitch.
--->
+<h2 id="general"></h2>
+  This course is about analyzing large amounts of quantitative data. The usual goal will be to make a set of decisions. Some terms you may run into include:
+  <ul>
+    <li>Data mining</li>
+    <li>Business analytics, Business intelligence</li>
+    <li>Machine learning</li>
+    <li>Artificial intelligence</li>
+    <li>Big Data</li>
+    <li>Specific techniques, such as Classification Trees, Neural Networks, Naive Bayesian, Random Forests, State Vector Machines, and many others.</li>
+  </ul>
 <p>
 
-</p>
-<p align="center">
-  <em>
-    For more information on what we teach and why,
-    please see our paper
-    "<a href="http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745">Best Practices for Scientific Computing</a>".
-  </em>
-</p>
+<h2> 
 
-<!--
-  AUDIENCE
-
-  Explain who your audience is.  (In particular, tell readers if the
-  workshop is only open to people from a particular institution.
--->
 <p id="who">
-  <strong>Who:</strong>
-  The course is aimed at graduate students and other researchers.
-  <strong>You don't need to have any previous knowledge of the tools that will
-    be presented at the workshop.</strong>
+  <strong>Who should take this course?</strong>
+  This course is for students who want to understand how to use new analytic concepts, often referred to as &ldquo;data mining&rdquo; or &ldquo;big data,&rdquo; to understand and solve problems. The problem
+  domain will be mainly business, with some public health and other non-monetary issues. The course is about the entire cycle of problem solving, from selecting the problem to presenting the results in an understandable way, and putting them into action. Business problems will include
+  web analytics, marketing, operations, etc.
+  <br>
+  Language and prerequisites: We will use primarily the R language, a computer language designed for statistical computing. Applying data mining methods, understanding their strengths/weaknesses, and using the results will be emphasized over statistical theory and computer science. A good background in statistics is required, especially a thorough understanding of classical least squares regression. Therefore IRCO 454 or equivalent are a prerequisite. You also need some background in computer programming/number crunching, sufficient to figure out R using the many on-line classes, videos, and guides. (Some are mentioned later in this syllabus.)
+  Programming is a perverse art, requiring constant inquisitiveness, a healthy amount of paranoia, and willingness to experiment.
 </p>
 
-<!--
-  LOCATION
-
-  This block displays the address and links to maps showing directions
-  if the latitude and longitude of the workshop have been set.  You
-  can use http://itouchmap.com/latlong.html to find the lat/long of an
-  address.
--->
 {% if page.latlng %}
 <p id="where">
   <strong>Where:</strong>
-  {{page.address}}.
+  {{page.venue}} at {{page.address}}.
   Get directions with
   <a href="//www.openstreetmap.org/?mlat={{page.latlng | replace:',','&mlon='}}&zoom=16">OpenStreetMap</a>
   or
@@ -99,55 +49,17 @@ TAEmail: "hyk149@eng.ucsd.edu"
 </p>
 {% endif %}
 
-<!--
-  SPECIAL REQUIREMENTS
-
-  Modify the block below if there are any special requirements.
--->
 <p id="requirements">
-  <strong>Requirements:</strong> Participants must bring a laptop with a
-  Mac, Linux, or Windows operating sytem (not a tablet, Chromebook, etc.) that they have administrative privileges
-  on. They should have a few specific software packages installed (listed
-  <a href="#setup">below</a>). They are also required to abide by
-  Software Carpentry's
-  <a href="{{site.swc_site}}/conduct.html">Code of Conduct</a>.
+  <strong>Requirements and Grading</strong> 
+  Grades are based on several kinds of work.
+  <ul>
+    <li>Problem sets (20 to 30% of grade)</li>
+    <li>Short assignments (20 to 30% of grade)</li>
+    <li>Build your own code notes</li>
+    <li>Final project (50% to 60% of grade)</li>
+  </ul>
 </p>
 
-<!--
-  ACCESSIBILITY
-
-  Modify the block below if there are any barriers to accessibility or
-  special instructions.
--->
-<p id="accessibility">
-  <strong>Accessibility:</strong> We are committed to making this workshop
-  accessible to everybody.
-  The workshop organisers have checked that:
-</p>
-<ul>
-  <li>The room is wheelchair / scooter accessible.</li>
-  <li>Accessible restrooms are available.</li>
-</ul>
-<p>
-  Materials will be provided in advance of the workshop and
-  large-print handouts are available if needed by notifying the
-  organizers in advance.  If we can help making learning easier for
-  you (e.g. sign-language interpreters, lactation facilities) please
-  {% if page.contact %}
-    <a href='mailto:{{page.contact}}'>get in touch</a>
-  {% else %}
-    <a href='mailto:{{site.contact}}'>get in touch</a>
-  {% endif %}
-  and we will attempt to provide them. 
-</p>
-
-<!--
-  CONTACT EMAIL ADDRESS
-
-  Display the contact email address set in the header.  If an address
-  isn't set in the header, the Software Carpentry admin address is
-  used.
--->
 <p id="contact">
   <strong>Contact</strong>:
   Please mail Prof. Bohn at 
@@ -159,42 +71,88 @@ TAEmail: "hyk149@eng.ucsd.edu"
 
 <hr/>
 
-<!--
-  SCHEDULE
-
-  Show the workshop's schedule.  Edit the items and times in the table
-  to match your plans.  You may also want to change 'Day 1' and 'Day
-  2' to be actual dates or days of the week.
--->
 <h2 id="schedule">Schedule</h2>
-
-<!-- DO NOT EDIT SURVEY LINKS -->
-<p><em>Surveys</em></p>
-<p>Please be sure to complete these surveys before and after the workshop.</p>
-<p><a href='{{ site.swc_pre_survey }}{{ site.github.project_title }}'>Pre-workshop Survey</a></p>
-<p><a href='{{ site.swc_post_survey }}{{ site.github.project_title }}'>Post-workshop Survey</a></p>
+<p>
+  Here is an approximate schedule. Normally, <strong>problem sets are due on Sunday</strong>. Mondays will be used for lectures, and Wednesdays will introduce new methods. Daily assignments will be posted on Ted. The final column shows deliverables for the projects. <strong>A project memorandum is due each Wednesday</strong> starting January 13. These memos won’t always be returned; keep working, regardless. 
+</p>
 
 <div class="row">
   <div class="col-md-6">
-    <h3>Day 1</h3>
     <table class="table table-striped">
-      <tr> <td>09:00</td>  <td>Automating tasks with the Unix shell</td> </tr>
-      <tr> <td>10:30</td> <td>Coffee</td> </tr>
-      <tr> <td>12:00</td>  <td>Lunch break</td> </tr>
-      <tr> <td>13:00</td>  <td>Building programs with Python</td> </tr>
-      <tr> <td>14:30</td>  <td>Coffee</td> </tr>
-      <tr> <td>16:00</td>  <td>Wrap-up</td> </tr>
-    </table>
-  </div>
-  <div class="col-md-6">
-    <h3>Day 2</h3>
-    <table class="table table-striped">
-      <tr> <td>09:00</td>  <td>Version control with Git</td> </tr>
-      <tr> <td>10:30</td>  <td>Coffee</td> </tr>
-      <tr> <td>12:00</td>  <td>Lunch break</td> </tr>
-      <tr> <td>13:00</td>  <td>Managing data with SQL</td> </tr>
-      <tr> <td>14:30</td>  <td>Coffee</td> </tr>
-      <tr> <td>16:00</td>  <td>Wrap-up</td> </tr>
+      <tr>
+        <th>Week</th>
+        <th>Dates</th>
+        <th>Topic</th>
+        <th>Project Assignments</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>March 28, 30, April 4</td>
+        <td>Introduction; looking at typical applications. Classification and Regression Trees</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>April 6, 11</td>
+        <td>Measuring performance of data mining methods: Confusion/error
+matrix, lift curves, etc.</td>
+        <td>Hand in URLs / descriptions of some data sets you are considering for your project</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>April 13, 18</td>
+        <td>Logistic regression, parsimony, LASSO. Why is &ldquo;non-linear&rdquo; so important?</td>
+        <td>Project proposal: first version</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>April 20, 25</td>
+        <td>The first and last stages of analysis. Google Flu and other
+failures. Data transformation, choosing variables. How DM compares with classical statistics</td>
+        <td>Be sure you can load some data. Provide descriptive statistics</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>April 27, May 2</td>
+        <td>Decision trees, random forests and boosting. Exploratory EDA methods</td>
+        <td>Final project proposal, including specific questions, discussion of variables, relevant literature</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>May 4, 9</td>
+        <td>Text mining</td>
+        <td>Exploratory data analysis</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>May 11, 16</td>
+        <td>Text mining</td>
+        <td>Initial data mining results</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>May 18, 23</td>
+        <td>Learning by controlled experiments (A/B trials)</td>
+        <td>Draft paper</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>May 25</td>
+        <td>Problems with big data. Loose ends</td>
+        <td>Detailed analytic results</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>May 30, June 1</td>
+        <td>Presentations and final drafts</td>
+        <td>Hand in view-graph version</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td></td>
+        <td>Final projects due. No final exam</td>
+        <td>Final papers DUE</td>
+      </tr>  
     </table>
   </div>
 </div>
