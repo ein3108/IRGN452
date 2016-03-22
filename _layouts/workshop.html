@@ -19,7 +19,7 @@
     <meta name="language" content="{{page.language}}" />
     <meta name="eventbrite" content="{{page.eventbrite}}" />
     <meta name="instructor" content="{{page.instructor|join:'|'}}" />
-    <meta name="helper" content="{{page.helper|join:'|'}}" />
+    <meta name="TA" content="{{page.TA|join:'|'}}" />
     <meta name="contact" content="{{page.contact}}" />
     <meta name="ProfOfficeHours" content="{{page.ProfOfficeHours}}" />
     <meta name="TAOfficeHours" content="{{page.TAOfficeHours}}" />
@@ -48,10 +48,10 @@
                 to be announced.
                 {% endif %}
                 </p>
-                {% if page.helper %}
+                {% if page.TA %}
                 <p>
                 <strong>TA:</strong>
-                {{page.helper | join: ', ' %}}
+                {{page.TA | join: ', ' %}}
                 </p>
                 {% endif %}
               </div>
@@ -84,7 +84,6 @@
           {{content}}
         </div>
       </div>
-      {% include footer.html %}
     </div>
     {% include javascript.html %}
   </body>
