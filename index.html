@@ -1,18 +1,17 @@
 ---
 layout: workshop      # DON'T CHANGE THIS.
 root: .               # DON'T CHANGE THIS.
-venue: "FIXME"        # brief name of host site without address (e.g., "Euphoric State University")
-address: "FIXME"      # street address of workshop (e.g., "123 Forth Street, Blimingen, Euphoria")
-country: "FIXME"      # country (lowercase two-letter ISO code such as "fr" - see https://en.wikipedia.org/wiki/ISO_3166-1)
-language: "FIXME"     # language (lowercase two-letter ISO code such as "fr" - see https://en.wikipedia.org/wiki/ISO_639-1)
-latlng: "FIXME"       # fractional latitude and longitude (e.g., "41.7901128,-87.6007318"; you can use http://www.latlong.net/)
-humandate: "FIXME"    # human-readable date (e.g., "Feb 17-18, 2020")
-humantime: "FIXME"    # human-readable time (e.g., "9:00 am - 4:30 pm")
-startdate: FIXME      # use YYYY-MM-DD format like 2015-01-01
-enddate: FIXME        # use YYYY-MM-DD format like 2015-01-02
-instructor: ["FIXME"] # list of names like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
-helper: ["FIXME"]     # list of names like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
-contact: "FIXME"      # contact email address for workshop organizer, such as "grace@hopper.org"
+venue: RBC 3202        # brief name of host site without address (e.g., "Euphoric State University")
+address: School of Global Policy & Strategy La Jolla, CA 92093      # street address of workshop (e.g., "123 Forth Street, Blimingen, Euphoria")
+latlng: "32.883975,-117.241035"
+humandate: "Monday and Wednesday"    # human-readable date (e.g., "Feb 17-18, 2020")
+humantime: "11:00 ~ 12:20"    # human-readable time (e.g., "9:00 am - 4:30 pm")
+startdate: 2016-03-??      # use YYYY-MM-DD format like 2015-01-01
+enddate: 2016-06-??        # use YYYY-MM-DD format like 2015-01-02
+instructor: ["Prof. Roger Bohn"] # list of names like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
+helper: ["Hyeonsu Kang"]     # list of names like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
+contact: ["Rbohn@ucsd.edu, "hyk149@eng.ucsd.edu"]      # contact email 
+address for workshop organizer, such as "grace@hopper.org"
 etherpad:         # optional (insert the URL for your Etherpad if you're using one)
 eventbrite:       # optional (insert the alphanumeric key for Eventbrite registration, e.g., "1234567890AB")
 ---
@@ -49,10 +48,6 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 </iframe>
 {% endif %}
 
-<h4>This is the workshop template.  Use it to create your own website.
-Delete this line and email the link to your workshop page to admin@software-carpentry.org.
-If this is a self organized workshop, please be sure to include any other details
-Software Carpentry staff may need to know in your email.</h4>
 
 
 <h2 id="general">General Information</h2>
@@ -164,12 +159,10 @@ Software Carpentry staff may need to know in your email.</h4>
 -->
 <p id="contact">
   <strong>Contact</strong>:
-  Please mail
-  {% if page.contact %}
-    <a href='mailto:{{page.contact}}'>{{page.contact}}</a>
-  {% else %}
-    <a href='mailto:{{site.contact}}'>{{site.contact}}</a>
-  {% endif %}
+  Please mail Prof. Bohn at 
+  <a href='mailto:{{page.contact.0}}'>{{page.contact.0}}</a>
+  and the TA at
+  <a href='mailto:{{page.contact.1}}'>{{page.contact.1}}</a>
   for more information.
 </p>
 
