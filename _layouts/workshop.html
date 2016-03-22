@@ -26,9 +26,6 @@
     {% endif %}
   </head>
   <body class="workshop">
-
-    {% include github-ribbon.html %}
-
     <div class="container card">
       {% include banner.html %}
       <div class="jumbotron">
@@ -42,7 +39,7 @@
               </div>
               <div class="col-md-6">
                 <p>
-                <strong>Instructors:</strong>
+                <strong>Instructor:</strong>
                 {% if page.instructor %}
                 {{page.instructor | join: ', ' %}}
                 {% else %}
@@ -51,7 +48,7 @@
                 </p>
                 {% if page.helper %}
                 <p>
-                <strong>Helpers:</strong>
+                <strong>TA:</strong>
                 {{page.helper | join: ', ' %}}
                 </p>
                 {% endif %}
