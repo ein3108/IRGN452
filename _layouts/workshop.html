@@ -21,6 +21,8 @@
     <meta name="instructor" content="{{page.instructor|join:'|'}}" />
     <meta name="helper" content="{{page.helper|join:'|'}}" />
     <meta name="contact" content="{{page.contact}}" />
+    <meta name="profOfficeHours" content="{{page.ProfOfficeHours}}" />
+    <meta name="taOfficeHours" content="{{page.TAOfficeHours}}" />
     {% if page.redirect %}
     <meta http-equiv="refresh" content="0; url={{page.redirect}}" />
     {% endif %}
@@ -52,6 +54,26 @@
                 {{page.helper | join: ', ' %}}
                 </p>
                 {% endif %}
+              </div>
+              <div class="col-md-6">
+                <p>
+                  <strong>Office Hours:</strong>
+                  {% if page.ProfOfficeHours %}
+                  {{page.ProfOfficeHours | join: ', ' %}}
+                  <br>
+                  <small><a href="//maps.google.com/maps?q={{page.PeetsCoffee}}">Peet's coffee location</a></small>
+                  {% eles %}
+                  to be announced.
+                  {% endif %}
+                </p>
+                <p>
+                  <strong>TA Office Hours:</strong>
+                  {% if page.TAOfficeHours %}
+                  {{page.TAOfficeHours | join: ', ' %}}
+                  {% else %}
+                  to be announced.
+                  {% endif %}
+                </p>
               </div>
             </div>
           </div>
